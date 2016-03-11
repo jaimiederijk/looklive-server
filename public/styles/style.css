@@ -2,6 +2,8 @@ body {
     font: 14px Raleway, Helvetica, Arial, sans-serif;
     background-color: #f1f1f1;
     margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
 }
 a {
     color: #00B7FF;
