@@ -42,3 +42,6 @@ appearance id.
 product id.
 
 The API returns JSON (for now).
+
+
+![Alt text](/public/images/logo.png?raw=true "Optional Title")
