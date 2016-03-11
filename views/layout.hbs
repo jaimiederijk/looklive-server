@@ -3,22 +3,28 @@
     <head>
         <title>{{title}}</title>
         <link rel='stylesheet' href='/styles/style.css' />
-        <link rel='stylesheet' href='/icons/sprite/sprite.css' />
         <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700,800,900,600,300,200,100' rel='stylesheet' type='text/css'>      
     </head>
     <body>
-        <nav>
-            <figure class="logo"><img src="/images/logo.png"></figure>
-            <ul class="nav_items">
-                <li><a href="/"><img src="/icons/png/home.png">Home</a></li>
-                <li><a href="https://looklive.com/discover/"><img src="/icons/png/latest.png">Latest</a></li>
-                <li><a href="https://looklive.com/people/"><img src="/icons/png/people.png">People</a></li>
-                <li><a href="https://looklive.com/shows/"><img src="/icons/png/shows.png">Shows</a></li>
-                <li><a href="https://looklive.com/music/"><img src="/icons/png/music.png">Music</a></li>
-                <li><a href="https://looklive.com/brands/"><img src="/icons/png/brands.png">Brands</a></li>
-            </ul>
-        </nav>
-        <header><img src="/images/header.png"></header>
+        <header>
+            <nav>
+                <figure class="logo"><img src="/images/logo.png"></figure>
+                <ul class="nav-items">
+                    <li><a href="/"><img src="/icons/png/home.png">Home</a></li>
+                    <li><a href="https://looklive.com/discover/"><img src="/icons/png/latest.png">Latest</a></li>
+                    <li><a href="https://looklive.com/people/"><img src="/icons/png/people.png">People</a></li>
+                    <li><a href="https://looklive.com/shows/"><img src="/icons/png/shows.png">Shows</a></li>
+                    <li><a href="https://looklive.com/music/"><img src="/icons/png/music.png">Music</a></li>
+                    <li><a href="https://looklive.com/brands/"><img src="/icons/png/brands.png">Brands</a></li>
+                </ul>
+            </nav>
+            <picture>
+                <source srcset="/images/header-1920.jpg" media="(min-width: 1280px)">
+                <source srcset="/images/header-1280.jpg" media="(min-width: 800px)">
+                <source srcset="/images/header-800.jpg" media="(min-width: 320px)">
+                <img src="/images/header-320.png" alt="Header Image" class="header__img">
+            </picture>
+        </header>
 
         <main>
             {{{body}}}
