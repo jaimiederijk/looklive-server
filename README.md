@@ -18,6 +18,6 @@ bron:[https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-lo
 
 ## Performence
 before
-![Alt text](/performence/lookliveloadtest.1.reload1.png?raw=true "Optional Title")
+![Alt text](/performance/lookliveloadtest.1.reload1.png)
 after
-![Alt text](/performence/looklive.after.png?raw=true "Optional Title")
+![Alt text](/performance/looklive.after.png)
