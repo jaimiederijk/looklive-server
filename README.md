@@ -42,9 +42,3 @@ appearance id.
 product id.
 
 The API returns JSON (for now).
-
-## Performence
-before
-![Alt text](/performence/lookliveloadtest.1.reload1.png?raw=true "Optional Title")
-after
-![Alt text](/performence/looklive.after.png?raw=true "Optional Title")

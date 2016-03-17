@@ -1,153 +1,60 @@
-// Change product section on detail page
-(function() {	
-	'use strict';
+(function () {
+    'use strict';
 
-	var mainInner = document.querySelector('main');
-	
-	var app = {
-		init: function() {
+    /**
+     * Invoked when the page is ready.
+     *
+     * @param  {Function} fn
+     * @return {void}
+     */
+    function ready(fn) {
+        if (document.readyState !== 'loading') {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    }
 
-			router.watch();
+    /**
+     * Set the classes on the appearence page.
+     *
+     * @return {void}
+     */
+    function appearance() {
+        var firstProduct = document.querySelector('.product');
+        var firstIndicator = document.querySelector(
+            '.product-indicator[data-uuid="' + firstProduct.getAttribute('data-uuid') + '"]'
+        );
+        var indicators = document.querySelectorAll('.product-indicator');
 
-		}
-	};
+        firstProduct.classList.add('product-active');
+        firstIndicator.classList.add('product-indicator-active');
 
-	var router = {
-		watch: function() {
+        Array.prototype.forEach.call(indicators, function (el) {
+            el.addEventListener('click', function (event) {
+                var id = event.currentTarget.getAttribute('data-uuid');
 
-			routie({
-				'': function() {
+                document
+                    .querySelector('.product-active')
+                    .classList.remove('product-active');
 
-					window.location.hash = '#feed';
-					window.location.pathname = '';
-			    },
-			    'feed': function() {
-			    	feed.getData();
-			    },
-			    'appearance/:id': function(id) {
-			    	appearencePage.getData(id);
-			    }
-			});
-		}
-	};
+                document
+                    .querySelector('.product-indicator-active')
+                    .classList.remove('product-indicator-active');
 
-	var api = {
-		call: function(url) {
+                document
+                    .querySelector('.product[data-uuid="' + id + '"]')
+                    .classList.add('product-active');
 
-			return new Promise(function(resolve, reject) {
+                event.currentTarget.classList.add('product-indicator-active');
+            });
+        });
+    }
 
-				var request = new XMLHttpRequest();
+    ready(function () {
+        if (/appearance/.test(window.location.href)) {
+            appearance();
+        }
+    });
+}());
 
-				request.onloadend = function(response) {
-
-					var data = request.response;
-					resolve(data);					
-				}
-
-				request.onerror = reject;
-
-				request.open('GET', url, true);
-				request.send();
-
-			});
-
-		}
-	};
-
-
-	var template = {
-		render: function(data) {
-			mainInner.innerHTML = data;
-		}
-	}
-
-
-	var feed = {
-		getData: function() {
-
-			var url = '/api/feed';
-			api.call(url)
-				.then(function(response) {
-
-				var data = response;
-				template.render(data);
-				// detailPage.getAllLinks();
-			})
-			.catch(function() {
-				var error = {
-					title: "Sorry, Cannot connect"
-				};
-				template.render(error);
-
-			});
-
-		}
-	}
-
-
-	var appearencePage = {
-		getData: function(id) {			
-			var _id = id;
-			// var url = '/api/product/' + _id; 
-			var url = '/api/appearance/' + _id;
-
-			api.call(url)
-				.then(function(response) {
-
-					var data = response;
-					template.render(data);
-					appearencePage.show();
-				})
-				.catch(function() {
-
-					var error = {
-						title: "Sorry, Cannot connect"
-					};
-					template.render(error);
-				});
-		},
-		show: function() {
-
-			var product = document.querySelectorAll('.product');
-
-			if ( product.length ) {
-				product[0].classList.add('product-active');
-
-				var productIndicator = document.querySelectorAll('.product-indicator');
-				var uuid = product[0].attributes[1].nodeValue;
-				productIndicator[0].setAttribute('data-uuid', uuid);
-				productIndicator[0].classList.add('product-indicator-active');
-
-				Array.prototype.forEach.call(productIndicator, function(productIndicator) {
-
-					productIndicator.addEventListener('click', showRelatedContent, false);
-
-					function showRelatedContent() {
-
-						var id = this.attributes[2].nodeValue;
-						
-						var activeEl = document.querySelector('.product-indicator-active');
-						activeEl.classList.remove('product-indicator-active');
-
-						var activeProduct = document.querySelector('.product-active');
-						activeProduct.classList.remove('product-active');
-
-						this.classList.add('product-indicator-active');
-
-
-						var p = document.querySelector(".product[data-uuid='" + id + "']");
-						p.classList.add('product-active');
-
-
-					}
-
-				});	
-			}
-
-		}
-	}
-
-
-	app.init();
-
-})();

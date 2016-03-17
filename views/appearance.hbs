@@ -1,19 +1,20 @@
-<article class="appearance" data-id="{{ item.id }}">
-    <section class="appearance-left">
+<div class="appearance" data-id="{{ item.id }}">
+    <div class="appearance-left">
         <img src="{{ item.image.url }}">
         {{#each item.product_occurrences}}
             <div class="product-indicator" style="top: {{position.y}}%; left: {{position.x}}%;" data-uuid="{{product.id}}"></div>
         {{/each}}
-    </section>
-    <section class="appearance-right">
+    </div>
+    <div class="appearance-right">
         <h2><img class="avatar" src="{{ item.subject.avatar.url }}"> {{ item.subject.name }}</h2>
         <h1>{{ item.title }}</h1>
 
-        <section class="appearance-products">
+        <div class="appearance-products">
             <h1>Products</h1>
+            <div class="appearance-products-inner">
                 {{#each products}}
-                    <article class="product" data-uuid="{{id}}">
-                        <section class="actual">
+                    <div class="product" data-uuid="{{id}}">
+                        <div class="actual">
                             <div class="image">
                                 <h1>Actual</h1>
                                 <img src="{{image.url}}">
@@ -22,9 +23,9 @@
                                 <h1>{{ name }}</h1>
                                 <h2>{{ brand.name }}</h2>
                             </div>
-                        </section>
+                        </div>
                         {{#each similars}}
-                            <section class="similar">
+                            <div class="similar">
                                 <div class="image">
                                     <h1>{{ similar_type }}</h1>
                                     <img src="{{image.url}}">
@@ -33,10 +34,11 @@
                                     <h1>{{ name }}</h1>
                                     <h2>{{ brand.name }}</h2>
                                 </div>
-                            </section>
+                            </div>
                         {{/each}}
-                    </article>
+                    </div>
                 {{/each}}
-        </section>
-    </section>
-</article>
+            </div>
+        </div>
+    </div>
+</div>
