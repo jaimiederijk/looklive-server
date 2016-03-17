@@ -25,7 +25,7 @@ testresults
 ### icons naar inline svg 
 ####before
 
-![Alt text](/performance/before.master.svg.png)
+![Alt text](/performance/before.master.png)
 ####after
 
 ![Alt text](/performance/after.svg.png)
