@@ -16,8 +16,41 @@ een groot voordeel is dat de performance van dit soort apps verbeterd kan worden
 bron:[https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 
 
-## Performence
-before
-![Alt text](/performence/lookliveloadtest.1.reload1.png?raw=true "Optional Title")
-after
-![Alt text](/performence/looklive.after.png?raw=true "Optional Title")
+## Performance
+testresults
+### settings
+- browser:chrome
+- voor elke test: cache wissen en geforceerd herladen
+
+### icons naar inline svg 
+####before
+
+![Alt text](/performance/before.master.png)
+####after
+
+![Alt text](/performance/after.svg.png)
+
+#### difference
+- loading: 52.3ms       52.8ms
+- rendering: 171.3ms    146.5ms
+- painting: 7.9ms       7.3ms
+
+Changes:
+- improved html and css
+- removed jquery
+- responsive images and smaller
+- single page app
+
+###total
+####before
+
+![Alt text](/performance/before.master.png)
+####after
+
+![Alt text](/performance/total.after.png)
+
+#### difference
+- loading: 49.1ms       59.5ms
+- scripting: 292.9ms    266.4ms
+- rendering: 226.6ms    154.0ms
+- painting: 19.2ms       6.1ms
