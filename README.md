@@ -4,11 +4,11 @@
 ## Performance
 ### before
 
-![Alt text](/performance/total.after "Optional Title")
+![Alt text](/performance/total.after.png "Optional Title")
 
 ### after
 
-![Alt text](/performance/after.sw "Optional Title")
+![Alt text](/performance/after.sw.png "Optional Title")
 
 
 ### difference
