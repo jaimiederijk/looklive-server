@@ -8,8 +8,30 @@
 		init: function() {
 
 			router.watch();
+			app.serviceWorker();
+		},
+		serviceWorker : function () {
+			if ('serviceWorker' in navigator) {
 
+                // Register the ServiceWorker
+                navigator.serviceWorker.register('sw.js', { scope: './' })
+                    .then(reg => console.info("registered SW", reg))
+                    .catch(err => console.error("Error registering SW", err));
+
+                // Unregister the ServiceWorker
+                // navigator.serviceWorker.getRegistration('./')
+                //     .then(reg => {
+
+                //         reg.unregister();
+                //         console.log("unregister SW");
+
+                //     });
+
+            } else {
+              console.log('not supported');
+            }
 		}
+		    
 	};
 
 	var router = {
