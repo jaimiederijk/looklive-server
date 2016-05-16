@@ -15,6 +15,11 @@ een groot voordeel is dat de performance van dit soort apps verbeterd kan worden
 
 bron:[https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
 
+## Online webserver
+
+[looklive digital ocean](http://146.185.154.244:3000/#feed)
+
+
 
 ## Performance
 testresults
