@@ -17,7 +17,7 @@ bron:[https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-lo
 
 ## Online webserver
 
-[looklive digital ocean](http://146.185.154.244:3000/#feed)
+[looklive digital ocean](http://146.185.137.69:3000/#feed)
 
 
 
